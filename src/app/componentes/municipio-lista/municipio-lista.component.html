@@ -1,0 +1,25 @@
+<!-- municipio-lista.component.html -->
+<div class="container mt-3">
+  <label for="departamento">Selecciona un departamento:</label>
+  <select id="departamento" [(ngModel)]="selectedDepartamento" (change)="filterByDepartamento()" class="form-control">
+    <option value="">Todos los departamentos</option>
+    <option *ngFor="let departamento of departamentos" [value]="departamento">
+      {{ departamento }}
+    </option>
+  </select>
+
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Municipio</th>
+        <th>Departamento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let municipio of municipios">
+        <td>{{ municipio.municipio }}</td>
+        <td>{{ municipio.departamento }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
